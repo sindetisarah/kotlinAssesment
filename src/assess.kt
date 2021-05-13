@@ -6,31 +6,31 @@ fun outputString(str:String):Int{
 var length=str.length
     return length
 }
-//data class Car(var make:String,var model:String,var color:String){
-// fun checkColor(car: List<Car>)  {
-//     var purple= mutableListOf<Car>()
-//     var red= mutableListOf<Car>()
-//     var orange= mutableListOf<Car>()
-//     var car= mutableListOf<Car>(
-//         Car("benz","car","red"),
-//     Car("benz","me","blue"),
-//     Car("benz","toyota","puple")
-//     )
-//     when(car.color){
-//         "purple"=>purple.add(car)
-//         "red"->red.add(car)
-//         "orange"->orange.add(car)
-//     }
-//
-// }}
+data class Car(var make:String,var model:String,var color:String){
+ fun checkColor(car: List<Car>)  {
+     var blue= mutableListOf<Car>()
+     var red= mutableListOf<Car>()
+     var other= mutableListOf<Car>()
+     var car= mutableListOf<Car>(
+         Car("benz","car","red"),
+     Car("benz","me","blue"),
+     Car("benz","toyota","puple")
+     )
+     when(car.color){
+         "blue"->blue.add(car)
+         "red"->red.add(car)
+         "other"->other.add(car)
+     }
+
+ }}
 
 
 class CurrentAccount(var accountNumber:String,var accountName:String,var balance:Int){
-    fun deposit(amount:Int){
-        balance=balance+amount
+    fun deposit(amount:Double){
+        balance=balance+amount.toInt()
     }
-    fun withdraw(amount:Int){
-        balance=balance-amount
+    fun withdraw(amount:Double){
+        balance=balance-amount.toInt()
     }
     fun details(){
         println("${accountNumber},${balance},${accountName}")
